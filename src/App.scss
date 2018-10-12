@@ -1,0 +1,158 @@
+@import './fonts.scss';
+@import './banner.scss';
+@import './buttons.scss';
+
+$mdc-typography-font-family: Geograph;
+$mdc-theme-primary: #fc0;
+$mdc-theme-secondary: #fc0;
+$grey: #cacaca;
+
+@import '@material/button/mixins';
+@import '@material/floating-label/mixins';
+@import '@material/textfield/mixins';
+@import '@material/theme/mdc-theme';
+@import '@material/snackbar/mdc-snackbar';
+@import '@material/checkbox/mdc-checkbox';
+@import '@material/form-field/mdc-form-field';
+@import '@material/typography/mdc-typography';
+
+@import '@material/react-switch/index';
+@import '@material/react-button/index';
+@import '@material/react-card/index';
+@import '@material/react-top-app-bar/index';
+@import '@material/react-text-field/index';
+@import '@material/react-material-icon/index';
+
+@import '@material/elevation/mdc-elevation';
+
+.mdc-button {
+  @include mdc-button-corner-radius(0);
+}
+
+.mdc-text-field {
+  @include mdc-text-field-corner-radius(0);
+  @include mdc-text-field-outline-corner-radius_(0);
+  width: 100%;
+}
+
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+  @include mdc-floating-label-ink-color(black);
+}
+
+.header-logo {
+  height: 40px;
+}
+
+.form__container {
+  border-top: 1px solid;
+  padding: 48px;
+}
+
+.form__form {
+  width: 450px;
+  margin: 0 auto;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.form-field {
+  margin-bottom: 16px;
+}
+
+.form__header,
+.facebook-login__container,
+.form-footer {
+  text-align: center;
+}
+
+.facebook-login__container {
+  margin: 48px 0 52px 0
+}
+
+.form-footer__submit,
+.form__checkbox {
+  margin-bottom: 16px;
+}
+.form-footer__submit button {
+  @include mdc-button-horizontal-padding(36px);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #333;
+  color: #333;
+  overflow: visible;
+  text-align: center;
+  height: 5px;
+  margin: 32px 0;
+}
+
+hr:after {
+  background: #fff;
+  content: 'or join with email';
+  padding: 0 24px;
+  position: relative;
+  top: -13px;
+}
+
+.logo {
+  width: 141px;
+}
+
+.facebook-login {
+  @include mdc-button-container-fill-color(#3B5998);
+  @include mdc-button-ink-color(white);
+
+  svg {
+    width: 12px;
+    height: auto;
+  }
+
+  div {
+    margin-left: 12px;
+  }
+}
+
+.mdc-top-app-bar {
+  @include mdc-top-app-bar-fill-color(white);
+  @include mdc-top-app-bar-ink-color(black);
+}
+
+a {
+  color: black;
+  text-decoration-color: $mdc-theme-primary;
+}
+
+
+// card
+.horizontal-card {
+  width: 350px;
+  box-shadow: none;
+  margin-bottom: 24px;
+}
+
+.horizontal-card-content {
+  display: flex;
+}
+
+.horizontal-card__image {
+  width: 150px;
+  margin-right: 24px;
+}
+
+.upload-icon-button {
+  @include mdc-button-container-fill-color(black);
+  @include mdc-button-ink-color(white);
+  i {
+    font-size: 17px;
+    margin-left: 6px;
+  }
+}
+
+.footer {
+  height: 150px;
+  width: 100%;
+  background: black;
+}

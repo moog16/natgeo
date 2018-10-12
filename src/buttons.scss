@@ -1,0 +1,79 @@
+@import '@material/ripple/mixins';
+@import '@material/ripple/functions';
+
+$primary-color: #fc0;
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 64px;
+}
+
+.mdc-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px;
+  max-width: 480px;
+}
+
+.button-row {
+  margin-bottom: 24px;
+}
+
+.buttons .mdc-form-field {
+  align-self: flex-end;
+}
+
+// buttons
+.buttons {
+  .mdc-button {
+    font-weight: bold;
+    letter-spacing: 2.5px;
+    padding: 0 16px 0 16px;
+  }
+
+  .mdc-button__core:not(.mdc-button__core--filled) .mdc-button:hover::before {
+    background-color: black;
+  }
+
+  .mdc-button__core {
+    padding: 2px;
+    border: 2px solid transparent;
+    outline: none;
+  }
+
+  .mdc-button__core:not(.mdc-button__core--disabled):focus {
+     border-color: #ffa000;
+  }
+
+  .mdc-button__core:not(.mdc-button__core--filled):not(.mdc-button__core--disabled):focus {
+    background-color: rgba($primary-color, .24);
+  }
+}
+
+
+
+// outlined
+.mdc-button.mdc-button--outlined:not(:disabled) {
+  color: black;
+  border-color: black;
+}
+
+.mdc-button__core {
+
+}
+
+
+
+
+// dark
+.mdc-button.mdc-button--dark:not(:disabled) {
+  color: white;
+  background: black;
+}
+
+.mdc-button:not(:disabled):not(.mdc-button--outlined):not(.mdc-button--dark) {
+  color: black;
+}

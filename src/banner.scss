@@ -1,0 +1,21 @@
+.mdc-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  border-top: 1px solid black;
+  border-bottom: 1px solid #cacaca;
+  padding: 12px 0 4px 0;
+
+  background: white;
+  z-index: 3;
+
+  transition: top 450ms;
+}
+
+.mdc-banner__text {
+  text-align: center;
+}
+
+.mdc-banner__buttons {
+  text-align: right;
+}
