@@ -28,11 +28,9 @@ import Button from '@material/react-button';
 import NativeControl from './NativeControl';
 
 export class Banner extends Component {
-  state = {top: 64, showing: false};
+  state = {top: -64, showing: false};
 
   componentDidMount() {
-    this.setTop();
-
     window.addEventListener('scroll', (evt) => {
       this.toggleBanner();
     });
@@ -68,7 +66,7 @@ export class Banner extends Component {
     if (this.state.showing) {
       this.setTop();
     } else {
-      this.setState({top: -64});
+      this.setState({top: -80});
     }
   }
 
@@ -79,11 +77,11 @@ export class Banner extends Component {
         <div className='mdc-banner__text'>
           {this.props.message}
         </div>
-        <div className='mdc-banner__buttons'>
-          <Button onClick={this.props.onSuccess}>
+        <div className='buttons mdc-banner__buttons'>
+          <Button onClick={this.props.onSuccess} unelevated>
             Fill Form
           </Button>
-          <Button onClick={() => this.setState({showing: false})}>
+          <Button onClick={() => this.setState({showing: false})} unelevated>
             Dismiss
           </Button>
         </div>

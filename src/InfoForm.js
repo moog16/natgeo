@@ -13,8 +13,6 @@ import Card from '@material/react-card';
 import MaterialIcon from '@material/react-material-icon';
 
 class InfoForm extends Component {
-  // emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/g;
-  emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/g;
   infoFormElement = React.createRef();
 
   state = {
@@ -183,6 +181,7 @@ class InfoForm extends Component {
         >
           <Input
             value={this.state.email}
+            pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
             onChange={(evt) => this.setState({email: evt.target.value})}
             required
           />
@@ -232,7 +231,10 @@ class InfoForm extends Component {
       <Button
         raised
         className='mdc-elevation--z0'
-        type='button' onClick={() => this.setState({submit: this.state.submit+1})}
+        type='submit' onClick={(e) => {
+          e.preventDefault();
+          this.setState({submit: this.state.submit+1});
+        }}
       >
         Join Now
       </Button>

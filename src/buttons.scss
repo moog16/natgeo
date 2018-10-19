@@ -1,5 +1,6 @@
 @import '@material/ripple/mixins';
 @import '@material/ripple/functions';
+@import '@material/button/mixins';
 
 $primary-color: #fc0;
 
@@ -22,58 +23,52 @@ $primary-color: #fc0;
   margin-bottom: 24px;
 }
 
-.buttons .mdc-form-field {
-  align-self: flex-end;
-}
 
 // buttons
 .buttons {
+
+  .mdc-form-field {
+    align-self: flex-end;
+  }
+
   .mdc-button {
     font-weight: bold;
     letter-spacing: 2.5px;
     padding: 0 16px 0 16px;
   }
 
-  .mdc-button__core:not(.mdc-button__core--filled) .mdc-button:hover::before {
-    background-color: black;
-  }
-
+  // created button core element
   .mdc-button__core {
     padding: 2px;
     border: 2px solid transparent;
     outline: none;
+    &:not(.mdc-button__core--filled) .mdc-button:hover::before {
+      background-color: $black;
+    }
+
+    &:not(.mdc-button__core--disabled):focus {
+       border-color: #ffa000;
+    }
+
+    &:not(.mdc-button__core--filled):not(.mdc-button__core--disabled):focus {
+      background-color: rgba($primary-color, .24);
+    }
   }
 
-  .mdc-button__core:not(.mdc-button__core--disabled):focus {
-     border-color: #ffa000;
+
+  // outlined
+  .mdc-button.mdc-button--outlined {
+    @include mdc-button-ink-color($black);
+    @include mdc-button-outline-color($black);
   }
 
-  .mdc-button__core:not(.mdc-button__core--filled):not(.mdc-button__core--disabled):focus {
-    background-color: rgba($primary-color, .24);
+  // dark
+  .mdc-button.mdc-button--dark {
+    @include mdc-button-ink-color($white);
+    @include mdc-button-container-fill-color($black);
   }
-}
 
-
-
-// outlined
-.mdc-button.mdc-button--outlined:not(:disabled) {
-  color: black;
-  border-color: black;
-}
-
-.mdc-button__core {
-
-}
-
-
-
-
-// dark
-.mdc-button.mdc-button--dark:not(:disabled) {
-  color: white;
-  background: black;
-}
-
-.mdc-button:not(:disabled):not(.mdc-button--outlined):not(.mdc-button--dark) {
-  color: black;
+  .mdc-button:not(.mdc-button--outlined):not(.mdc-button--dark) {
+    @include mdc-button-ink-color($black);
+  }
 }

@@ -3,13 +3,13 @@
   left: 0;
   right: 0;
   border-top: 1px solid black;
-  border-bottom: 1px solid #cacaca;
-  padding: 12px 0 4px 0;
+  border-bottom: 1px solid $grey;
+  padding: 16px;
 
   background: white;
   z-index: 3;
 
-  transition: top 450ms;
+  transition: top 250ms;
 }
 
 .mdc-banner__text {
@@ -18,4 +18,21 @@
 
 .mdc-banner__buttons {
   text-align: right;
+}
+
+.mdc-banner .mdc-button:not(:disabled) {
+  color: #ffa000;
+}
+
+.mdc-banner__buttons.buttons {
+  margin: 0;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  .mdc-button {
+    margin-right: 12px;
+    border-radius: 0;
+  }
 }

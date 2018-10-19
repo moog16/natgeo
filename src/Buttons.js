@@ -5,8 +5,17 @@ import Switch from '@material/react-switch';
 import {MDCRipple} from '@material/ripple';
 import classnames from 'classnames';
 
+const ButtonRow = ({disabled = false, className = ''}) => (
+  <div className='button-row'>
+    <div className={`${disabled ? 'mdc-button__core--disabled' : ''} mdc-button__core mdc-button__core--filled`} tabIndex='0'>
+      <button ref={el => el && new MDCRipple(el)} className={`mdc-button ${className}`} tabIndex='-1' disabled={disabled}>
+        Watch Again
+      </button>
+    </div>
+  </div>
+);
+
 class Buttons extends Component {
-  text = 'Watch Again';
   state = {
     disabled: false,
   };
@@ -16,34 +25,10 @@ class Buttons extends Component {
     return (
       <div className='buttons'>
         <Card>
-          <div className='button-row'>
-            <div className={`${disabled ? 'mdc-button__core--disabled' : ''} mdc-button__core mdc-button__core--filled`} tabIndex='0'>
-              <button ref={el => el && new MDCRipple(el)} className='mdc-button mdc-button--unelevated' tabIndex='-1' disabled={disabled}>
-                {this.text}
-              </button>
-            </div>
-          </div>
-          <div className='button-row'>
-            <div className={`${disabled ? 'mdc-button__core--disabled' : ''} mdc-button__core`} tabIndex='0'>
-              <button ref={el => el && new MDCRipple(el)} className='mdc-button mdc-button--outlined' tabIndex='-1' disabled={disabled}>
-                {this.text}
-              </button>
-            </div>
-          </div>
-          <div className='button-row'>
-            <div className={`${disabled ? 'mdc-button__core--disabled' : ''} mdc-button__core mdc-button__core--filled`} tabIndex='0'>
-              <button ref={el => el && new MDCRipple(el)} className='mdc-button mdc-button--unelevated mdc-button--dark' tabIndex='-1' disabled={disabled}>
-                {this.text}
-              </button>
-            </div>
-          </div>
-          <div className='button-row'>
-            <div className={`${disabled ? 'mdc-button__core--disabled' : ''} mdc-button__core`} tabIndex='0'>
-              <button ref={el => el && new MDCRipple(el)} className='mdc-button' tabIndex='-1' disabled={disabled}>
-                {this.text}
-              </button>
-            </div>
-          </div>
+          <ButtonRow className='mdc-button--unelevated'/>
+          <ButtonRow className='mdc-button--outlined'/>
+          <ButtonRow className='mdc-button--unelevated mdc-button--dark'/>
+          <ButtonRow />
 
           <div className='mdc-form-field'>
             <Switch
