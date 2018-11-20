@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.png';
 import silohouette from './silohouette.png';
 import FacebookLogo from './facebook.js';
 
@@ -35,7 +34,6 @@ class InfoForm extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.submit !== prevState.submit) {
-      // hack!
       const textFields = this.infoFormElement.current.querySelectorAll('.mdc-text-field');
       textFields.forEach(tf => tf.querySelector('input').focus());
 
@@ -67,10 +65,10 @@ class InfoForm extends Component {
 
 
   render() {
-    const {firstName, lastName, password, showSnackbar, showBanner, bannerMessage} = this.state;
+    const {showSnackbar, showBanner, bannerMessage} = this.state;
     return (
       <div className='info-form' ref={this.infoFormElement}>
-        <TopAppBar title={<img className='header-logo' src={logo} />}/>
+        <TopAppBar />
         <div className='mdc-top-app-bar--fixed-adjust form'>
           <Banner show={showBanner} message={bannerMessage} onSuccess={this.scrollToError}/>
           <div className='form__container'>
@@ -122,7 +120,7 @@ class InfoForm extends Component {
     return (
       <Card className='horizontal-card'>
         <div className='horizontal-card-content'>
-          <img className='horizontal-card__image' src={silohouette}/>
+          <img className='horizontal-card__image' src={silohouette} alt=''/>
           <div className='horizontal-card-header'>
             <h2 className='mdc-typography--body1 card-title'>Choose profile image (optional)</h2>
             <button className='mdc-button mdc-button--raised mdc-elevation--z0 upload-icon-button' type='button'>
@@ -244,8 +242,8 @@ class InfoForm extends Component {
   renderFacebookSignIn() {
     return (
       <Button onClick={(evt) => {evt.preventDefault()}}
-        icon={<FacebookLogo />} raised className='facebook-login mdc-elevation--z0'>
-        <div>Connect with Facebook</div>
+        icon={<span className='mdc-button__icon facebook-icon'><FacebookLogo/></span>} raised className='facebook-login mdc-elevation--z0'>
+        Connect with Facebook
       </Button>
     );
   }

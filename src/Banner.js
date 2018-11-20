@@ -21,11 +21,7 @@
 // THE SOFTWARE.
 
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import withRipple from '@material/react-ripple';
 import Button from '@material/react-button';
-
-import NativeControl from './NativeControl';
 
 export class Banner extends Component {
   state = {top: -64, showing: false};

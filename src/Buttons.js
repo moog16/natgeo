@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import Button from '@material/react-button';
 import Card from '@material/react-card';
 import Switch from '@material/react-switch';
 import {MDCRipple} from '@material/ripple';
-import classnames from 'classnames';
 
 const ButtonRow = ({disabled = false, className = ''}) => (
   <div className='button-row'>

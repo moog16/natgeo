@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {MDCTextField} from '@material/textfield/index';
 import classnames from 'classnames';
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {MDCSnackbar} from '@material/snackbar';
-import classnames from 'classnames';
 
 class Snackbar extends Component {
   element = React.createRef();

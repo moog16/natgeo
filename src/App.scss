@@ -1,4 +1,4 @@
-$mdc-typography-font-family: Geograph;
+$mdc-typography-font-family: 'Montserrat', sans-serif;;
 $mdc-theme-primary: #fc0;
 $mdc-theme-secondary: #fc0;
 $grey: #cacaca;
@@ -6,7 +6,6 @@ $black: black;
 $white: white;
 $facebook-blue: #3b5998;
 
-@import './fonts.scss';
 @import './banner.scss';
 @import './buttons.scss';
 
@@ -74,6 +73,10 @@ $facebook-blue: #3b5998;
 
 .facebook-login__container {
   margin: 48px 0 52px 0
+}
+
+.facebook-icon {
+  height: 24px;
 }
 
 .form-footer__submit,
